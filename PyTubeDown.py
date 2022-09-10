@@ -7,8 +7,6 @@ import os
 
 from PIL import Image , ImageTk
 from pytube import YouTube
-import datetime
-import calendar
 import requests
 import re
 import moviepy.editor as mp
