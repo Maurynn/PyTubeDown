@@ -9,11 +9,11 @@ from PIL import Image , ImageTk
 from pytube import YouTube
 import requests
 import re
-import moviepy.editor as mp
+import moviepy.editor
 
 janela = customtkinter.CTk()
 janela.geometry('640x400')
-janela.title('DownPyTube')
+janela.title('PyTubeDown - Dev_By_Mauro')
 janela.resizable(False,False)
 janela.iconbitmap('imagens\youtube-logo-png-2076-256x256.ico')
 
@@ -56,7 +56,7 @@ def download_mp3():
         if re.search('mp4', file):
             mp4_path = os.path.join(download_Folder, file)
             mp3_path = os.path.join(download_Folder, os.path.splitext(file)[0]+'.mp3')
-            new_file = mp.AudioFileClip(mp4_path)
+            new_file = moviepy.editor.AudioFileClip(mp4_path)
             new_file.write_audiofile(mp3_path)
             os.remove(mp4_path)
 
